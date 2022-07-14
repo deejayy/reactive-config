@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { APP_INITIALIZER, NgModule, Type } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  ModuleWithProviders,
+  NgModule,
+  Type,
+} from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { ReactiveConfigFacade } from './reactive-config.facade';
 import { reactiveConfigReducer } from './reactive-config.reducer';
@@ -12,11 +17,18 @@ interface ConfigSettings {
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, HttpClientModule, StoreModule.forFeature('reactive-config', reactiveConfigReducer)],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    StoreModule.forFeature('reactive-config', reactiveConfigReducer),
+  ],
   providers: [ReactiveConfigService, ReactiveConfigFacade],
 })
 export class ReactiveConfigModule {
-  public static forRoot<ConfigModel>(configurationType: Type<ConfigModel>, options?: ConfigSettings) {
+  public static forRoot<ConfigModel>(
+    configurationType: Type<ConfigModel>,
+    options?: ConfigSettings
+  ): ModuleWithProviders<ReactiveConfigModule> {
     return {
       ngModule: ReactiveConfigModule,
       providers: [
