@@ -3,5 +3,36 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "reactive-config": {
+      "projectType": "library",
+      "root": "projects/reactive-config",
+      "sourceRoot": "projects/reactive-config/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/reactive-config/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/reactive-config/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/reactive-config/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/reactive-config/src/test.ts",
+            "tsConfig": "projects/reactive-config/tsconfig.spec.json",
+            "karmaConfig": "projects/reactive-config/karma.conf.js"
+          }
+        }
+      }
+    }
   }
 }

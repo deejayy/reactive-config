@@ -1,14 +1,22 @@
 {
-  "name": "reactive-config",
-  "version": "0.0.0",
+  "name": "@deejayy/reactive-config",
+  "version": "14.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "prerelease": "ng lint && ng test && ng build --configuration production reactive-config",
+    "release": "npm publish dist/reactive-config/ --access public"
   },
-  "private": true,
+  "private": false,
+  "np": {
+    "contents": "dist/reactive-config"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@angular/animations": "^14.0.0",
     "@angular/common": "^14.0.0",
@@ -18,11 +26,13 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@ngrx/store": "^14.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^14.0.6",
     "@angular/cli": "~14.0.5",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
@@ -32,6 +42,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "ng-packagr": "^14.0.0",
     "typescript": "~4.7.2"
   }
 }

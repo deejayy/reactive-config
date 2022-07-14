@@ -1,3 +1,3 @@
 # Runtime Reactive Configuration handler for Angular
 
-TBD.
+Docs to be done.

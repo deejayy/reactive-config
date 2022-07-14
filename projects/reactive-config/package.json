@@ -1,0 +1,12 @@
+{
+  "name": "@deejayy/reactive-config",
+  "version": "14.0.0",
+  "peerDependencies": {
+    "@angular/common": "^14",
+    "@angular/core": "^14",
+    "@ngrx/store": "^14"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
