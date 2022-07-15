@@ -1,6 +1,6 @@
 [![npm](https://img.shields.io/npm/v/@deejayy/reactive-config?label=reactive-config)](https://www.npmjs.com/package/@deejayy/reactive-config)
 
-# Runtime Reactive Configuration handler for Angular
+# Runtime Reactive Configuration Handler for Angular
 
 ## Install
 

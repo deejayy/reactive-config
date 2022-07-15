@@ -1,6 +1,23 @@
 {
   "name": "@deejayy/reactive-config",
   "version": "14.0.2",
+  "description": "Runtime Reactive Configuration Handler for Angular",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deejayy/reactive-config"
+  },
+  "author": "DeeJayy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deejayy/reactive-config/issues"
+  },
+  "keywords": [
+    "angular",
+    "runtime config",
+    "reactive config"
+  ],
+  "homepage": "https://github.com/deejayy/reactive-config",
   "peerDependencies": {
     "@angular/common": "^14",
     "@angular/core": "^14",
