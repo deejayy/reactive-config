@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/@deejayy/reactive-config?label=reactive-config)](https://www.npmjs.com/package/@deejayy/reactive-config)
+[![npm](https://img.shields.io/npm/v/@deejayy/reactive-config?label=@deejayy/reactive-config)](https://www.npmjs.com/package/@deejayy/reactive-config)
 
 # Runtime Reactive Configuration Handler for Angular
 
