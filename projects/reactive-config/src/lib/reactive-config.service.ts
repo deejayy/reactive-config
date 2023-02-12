@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ReactiveConfigState } from 'projects/reactive-config/src/lib/reactive-config.state';
+import { catchError, map, Observable, of, shareReplay, take } from 'rxjs';
 import { ReactiveConfigFacade } from './reactive-config.facade';
-import { catchError, map, Observable, of, take } from 'rxjs';
 
 const DEFAULT_CONFIG_PATH = '/assets/config.json';
 
 @Injectable()
-export class ReactiveConfigService<ConfigModel> {
+export class ReactiveConfigService<ConfigModel extends ReactiveConfigState> {
   private appConfig: ConfigModel = {} as ConfigModel;
   private configPath: string = '';
 
@@ -20,7 +21,11 @@ export class ReactiveConfigService<ConfigModel> {
         this.appConfig = { ...data };
         return data;
       }),
-      catchError((err) => (console.error('Error when loading configuration:', err), of())),
+      shareReplay(),
+      catchError((err) => {
+        console.error('Error when loading configuration:', err);
+        return of();
+      }),
     );
   }
 
@@ -35,7 +40,7 @@ export class ReactiveConfigService<ConfigModel> {
 
   public get(key: keyof ConfigModel): ConfigModel[keyof ConfigModel] {
     if (!this.appConfig) {
-      throw Error('Config\'s not ready!');
+      throw Error('Config is not ready!');
     }
 
     return this.appConfig[key];

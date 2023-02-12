@@ -4,7 +4,7 @@ import { reactiveConfigInitialState, ReactiveConfigState } from './reactive-conf
 
 const reducer = createReducer(
   reactiveConfigInitialState,
-  on(ReactiveConfigActions.initConfig, (state, action) => {
+  on(ReactiveConfigActions.initConfig, (_state, action) => {
     return action.config;
   }),
   on(ReactiveConfigActions.setValue, (state, action) => {
