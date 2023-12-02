@@ -1,6 +1,6 @@
 {
   "name": "@deejayy/reactive-config",
-  "version": "16.0.0",
+  "version": "17.0.0",
   "description": "Runtime Reactive Configuration Handler for Angular",
   "private": false,
   "repository": {
@@ -19,9 +19,9 @@
   ],
   "homepage": "https://github.com/deejayy/reactive-config",
   "peerDependencies": {
-    "@angular/common": "^16",
-    "@angular/core": "^16",
-    "@ngrx/store": "^16"
+    "@angular/common": "^17",
+    "@angular/core": "^17",
+    "@ngrx/store": "^17"
   },
   "dependencies": {
     "tslib": "^2.3.0"
